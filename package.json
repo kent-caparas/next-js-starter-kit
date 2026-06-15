@@ -1,0 +1,40 @@
+{
+  "name": "@kent-caparas/create-next-kit",
+  "version": "1.0.0",
+  "description": "Interactive Next.js starter kit generator. Pick your dependencies and frontend architecture; get a clean, boilerplate-free project.",
+  "type": "module",
+  "bin": {
+    "create-next-kit": "bin/cli.js"
+  },
+  "files": [
+    "bin",
+    "src"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "start": "node bin/cli.js",
+    "create": "node bin/cli.js",
+    "check": "node --check bin/cli.js && node -e \"import('./src/index.js').then(()=>console.log('modules ok'))\""
+  },
+  "keywords": [
+    "nextjs",
+    "starter",
+    "scaffold",
+    "generator",
+    "cli",
+    "feature-sliced-design",
+    "tailwind",
+    "shadcn"
+  ],
+  "author": "",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18.18.0"
+  },
+  "dependencies": {
+    "@clack/prompts": "^0.11.0",
+    "picocolors": "^1.1.1"
+  }
+}
