@@ -28,8 +28,19 @@
     "tailwind",
     "shadcn"
   ],
-  "author": "",
+  "author": {
+    "name": "kent-caparas",
+    "url": "https://github.com/kent-caparas"
+  },
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kent-caparas/next-js-starter-kit.git"
+  },
+  "bugs": {
+    "url": "https://github.com/kent-caparas/next-js-starter-kit/issues"
+  },
+  "homepage": "https://github.com/kent-caparas/next-js-starter-kit#readme",
   "engines": {
     "node": ">=18.18.0"
   },
