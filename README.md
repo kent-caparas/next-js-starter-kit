@@ -4,13 +4,36 @@ An interactive Next.js starter-kit generator. Answer a few questions about your
 dependencies and frontend architecture, and it scaffolds a clean App Router
 project — no `create-next-app` boilerplate to delete afterwards.
 
+## Quick start
+
+You don't install it — run it with your package manager's runner. It scaffolds a
+**new folder** in the current directory, so run it from where you want the
+project to live:
+
 ```bash
-# from this repo
-npm install
-npm start
-# or scaffold straight away
-node bin/cli.js my-app
+# npm
+npx @kent-caparas/create-next-kit my-app
+npm create @kent-caparas/next-kit@latest my-app
+
+# bun
+bunx @kent-caparas/create-next-kit my-app
+bun create @kent-caparas/next-kit my-app
+
+# pnpm / yarn
+pnpm create @kent-caparas/next-kit my-app
+yarn create @kent-caparas/next-kit my-app
 ```
+
+Then start the generated app:
+
+```bash
+cd my-app
+npm run dev   # or bun / pnpm / yarn
+```
+
+With no flags it walks you through the questions below. It creates `./my-app` —
+it does not scaffold into the folder you're already in (if that folder exists and
+is non-empty, it refuses rather than overwrite).
 
 ## What it asks
 
@@ -50,10 +73,10 @@ dependencies at their latest versions, and (optionally) initializes git.
 ## Flags (non-interactive)
 
 ```bash
-node bin/cli.js my-app --yes              # accept all defaults
-node bin/cli.js my-app --yes --no-install # scaffold without installing
-node bin/cli.js my-app --yes --pm bun     # pick a package manager
-node bin/cli.js my-app --yes --no-git     # skip git init
+npx @kent-caparas/create-next-kit my-app --yes              # accept all defaults
+npx @kent-caparas/create-next-kit my-app --yes --no-install # scaffold without installing
+npx @kent-caparas/create-next-kit my-app --yes --pm bun     # pick a package manager
+npx @kent-caparas/create-next-kit my-app --yes --no-git     # skip git init
 ```
 
 ## How it's built
@@ -68,6 +91,24 @@ node bin/cli.js my-app --yes --no-git     # skip git init
 | `src/templates.js` | content for every generated file |
 | `src/scaffold.js` | writes all files and the project README |
 | `src/utils.js` | filesystem + command helpers |
+
+## Local development
+
+Working on the generator itself (not just using it):
+
+```bash
+git clone https://github.com/kent-caparas/next-js-starter-kit.git
+cd next-js-starter-kit
+npm install
+
+# run it straight from source
+npm start -- my-app          # same as: node bin/cli.js my-app
+node bin/cli.js my-app --yes # non-interactive
+
+# make `create-next-kit` available globally while you iterate
+npm link
+create-next-kit my-app
+```
 
 ## Requirements
 
